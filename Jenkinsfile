@@ -1,6 +1,10 @@
 pipeline {
     agent any
 
+    triggers {
+        pollSCM('* * * * *') // Polls SCM every minute
+    }
+
     stages {
         stage('Restore dependencies') {
             steps {
